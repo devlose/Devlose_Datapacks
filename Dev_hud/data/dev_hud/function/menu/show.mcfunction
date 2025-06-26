@@ -1,0 +1,21 @@
+
+tellraw @s [{"color":"#9E9E9E","text":"\n-------------|"},{"bold":true,"color":"#00C5A2","text":" Dev HUD Config"},{"color":"#9E9E9E","text":" |-------------\n"}]
+
+tellraw @s [ {"color":"white","text":"                                                             "}, { "color":"#9E9E9E", "hover_event":{ "action":"show_text", "value":[ {"text":"Show this menu again with\n", "color":"#9E9E9E"}, {"text":"/trigger dev_hud_menu", "color":"#f5f5f5"} ] }, "text":"🛈" } ]
+# Clock Display
+execute if score @s d_hud_clock_mode matches 0 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_clock_trigger set 1"},"color":"#F44336","hover_event":{"action":"show_text","value":[{"text":"Click to Enable","color":"#9E9E9E","bold":true}]},"text":"☐ "},"Display Time\n"]
+execute if score @s d_hud_clock_mode matches 1 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_clock_trigger set 1"},"color":"#90ee90","hover_event":{"action":"show_text","value":[{"text":"Click to Disable","color":"#9E9E9E","bold":true}]},"text":"☒ "},"Display Time\n"]
+
+# Compass Display
+execute if score @s d_hud_coords_mode matches 0 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_coords_trigger set 1"},"color":"#F44336","hover_event":{"action":"show_text","value":[{"text":"Click to Enable","color":"#9E9E9E","bold":true}]},"text":"☐ "},"Display Coordinates\n"]
+execute if score @s d_hud_coords_mode matches 1 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_coords_trigger set 1"},"color":"#90ee90","hover_event":{"action":"show_text","value":[{"text":"Click to Disable","color":"#9E9E9E","bold":true}]},"text":"☒ "},"Display Coordinates\n"]
+
+# Last Death Display
+execute if score @s d_hud_last_death_mode matches 0 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_last_death_trigger set 1"},"color":"#F44336","hover_event":{"action":"show_text","value":[{"text":"Click to Enable","color":"#9E9E9E","bold":true}]},"text":"☐ "},{"text":"Display Last Death"},"          ",{"click_event":{"action":"run_command","command":"/trigger d_hud_death_reset_trigger"},"color":"#F5F5F5","hover_event": {"action": "show_text","value": [{"text":"Reset and hide the last death module\n", "color":"#f5f5f5"},{"text":"(e.g., after recovering your equipment).\n", "color":"#9E9E9E"},{"text":"It will be automatically re-enabled at your next death.", "color":"#f5f5f5"}]},"text":"[reset Last Death]\n","underlined":true}]
+execute if score @s d_hud_last_death_mode matches 1 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_last_death_trigger set 1"},"color":"#90ee90","hover_event":{"action":"show_text","value":[{"text":"Click to Enable","color":"#9E9E9E","bold":true}]},"text":"☒ "},{"text":"Display Last Death"},"          ",{"click_event":{"action":"run_command","command":"/trigger d_hud_death_reset_trigger"},"color":"#F5F5F5","hover_event": {"action": "show_text","value": [{"text":"Reset and hide the last death module\n", "color":"#f5f5f5"},{"text":"(e.g., after recovering your equipment).\n", "color":"#9E9E9E"},{"text":"It will be automatically re-enabled at your next death.", "color":"#f5f5f5"}]},"text":"[reset Last Death]\n","underlined":true}]
+
+# Dark Display
+execute if score @s d_hud_dark_color_mode matches 0 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_color_dark_trigger set 1"},"color":"#F44336","hover_event":{"action":"show_text","value":[{"text":"Click to Enable","color":"#9E9E9E","bold":true}]},"text":"☐ "},"Display Darker\n"]
+execute if score @s d_hud_dark_color_mode matches 1 run tellraw @s [{"color":"#f5f5f5","text":"   "},{"click_event":{"action":"run_command","command":"/trigger d_hud_color_dark_trigger set 1"},"color":"#90ee90","hover_event":{"action":"show_text","value":[{"text":"Click to Disable","color":"#9E9E9E","bold":true}]},"text":"☒ "},"Display Darker\n"]
+
+tellraw @s {"text":"\n-------------------------------------------","color":"#9E9E9E"}
